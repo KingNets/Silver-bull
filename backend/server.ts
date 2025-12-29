@@ -3,16 +3,28 @@ import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import nodemailer from 'nodemailer';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Email transporter setup
+const transporter = nodemailer.createTransport({
+  host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+  port: parseInt(process.env.EMAIL_PORT || '587'),
+  secure: false,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
 
 // Interface for form data
 interface ContactFormData {
@@ -55,8 +67,27 @@ async function sendEmailNotification(formData: ContactFormData) {
         <p><strong>Name:</strong> ${formData.title} ${formData.firstName} ${formData.lastName}</p>
         <p><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>
         <p><strong>Phone:</strong> ${formData.phone}</p>
-  `; // emailHtml
-  // TODO: implement nodemailer send here
+        ${formData.companyName ? `<p><strong>Company:</strong> ${formData.companyName}</p>` : ''}
+        ${formData.registrationNumber ? `<p><strong>Registration:</strong> ${formData.registrationNumber}</p>` : ''}
+      </div>
+
+      <div style="background-color: #f3f3f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <h3 style="margin-top: 0; color: #030213;">Service Details</h3>
+        <p><strong>Service Type:</strong> ${formData.serviceType}</p>
+        ${formData.estimatedQuantity ? `<p><strong>Estimated Quantity:</strong> ${formData.estimatedQuantity}</p>` : ''}
+        ${formData.message ? `<p><strong>Message:</strong> ${formData.message}</p>` : ''}
+      </div>
+
+      <p style="color: #666; font-size: 12px;">Submitted on: ${new Date(formData.createdAt).toLocaleString()}</p>
+    </div>
+  `;
+
+  await transporter.sendMail({
+    from: process.env.EMAIL_FROM || 'noreply@rim-invest.com',
+    to: process.env.EMAIL_TO || 'Kaimo.rim@gmail.com',
+    subject: `New Quote Request from ${formData.firstName} ${formData.lastName}`,
+    html: emailHtml,
+  });
 }
 
 // Route to handle contact form submissions
