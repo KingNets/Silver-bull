@@ -2,10 +2,10 @@ services:
   - type: web
     name: silv213
     runtime: node
-    buildCommand: npm install --production
+    buildCommand: npm ci --omit=dev
     startCommand: npm run server
     envVars:
       - key: NODE_ENV
         value: production
       - key: NODE_OPTIONS
-        value: "--max-old-space-size=256"
+        value: "--max-old-space-size=512"
