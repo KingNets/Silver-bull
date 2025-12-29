@@ -112,7 +112,7 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      const apiUrl = (import.meta as any).env.VITE_API_URL || "https://silv213.onrender.com";
+      const apiUrl = (import.meta as any).env.VITE_API_URL || "https://silv213-production.up.railway.app";
       const response = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
         headers: {
