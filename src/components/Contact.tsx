@@ -112,7 +112,7 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      const apiUrl = (import.meta.env.VITE_API_URL as string) || "https://rim-invest-backend.onrender.com";
+      const apiUrl = (import.meta as any).env.VITE_API_URL || "https://rim-invest-backend.onrender.com";
       const response = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
         headers: {
