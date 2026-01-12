@@ -1,5 +1,5 @@
 import { Separator } from "./ui/separator";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export function Footer() {
   return (
@@ -9,18 +9,8 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div>
-              <h3 className="text-xl tracking-wider">Rim Invest</h3>
+              <h3 className="text-xl tracking-wider">SilverStock</h3>
               <p className="text-xs text-gray-400">PRECIOUS METALS</p>
-            </div>
-            <p className="text-gray-300 text-sm">
-              Leading precious metals dealer specializing in silver trading for businesses 
-              and private investors worldwide.
-            </p>
-            <div className="flex space-x-4">
-              <Facebook className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" />
-              <Twitter className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" />
-              <Instagram className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" />
-              <Linkedin className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer" />
             </div>
           </div>
 
@@ -37,7 +27,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>Kaimo.rim@gmail.com</span>
+                <span>kaimo.rim@mail.ee</span>
               </div>
               <div className="mt-4">
                 <p className="text-xs">Tallinn, Estonia</p>
@@ -56,16 +46,10 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-400">
-            <p>&copy; 2024 Rim Invest Precious Metals. All rights reserved.</p>
+            <p>&copy; 2024 SilverStock Precious Metals. All rights reserved.</p>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Shipping Policy</a>
             </div>
-          </div>
-          
-          <div className="text-sm text-gray-400">
-            <p>Licensed & Insured Precious Metals Dealer</p>
           </div>
         </div>
       </div>

@@ -59,7 +59,7 @@ async function sendEmailNotification(formData: ContactFormData) {
   const emailHtml = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
       <h2 style="color: #030213; border-bottom: 2px solid #030213; padding-bottom: 10px;">
-        🔔 New Contact Form Submission - Rim Invest
+        🔔 New Contact Form Submission - SilverStock
       </h2>
       
       <div style="background-color: #f3f3f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -83,8 +83,8 @@ async function sendEmailNotification(formData: ContactFormData) {
   `;
 
   await transporter.sendMail({
-    from: process.env.EMAIL_FROM || 'noreply@rim-invest.com',
-    to: process.env.EMAIL_TO || 'Kaimo.rim@gmail.com',
+    from: process.env.EMAIL_FROM || 'noreply@silverstock.com',
+    to: process.env.EMAIL_TO || 'kaimo.rim@mail.ee',
     subject: `New Quote Request from ${formData.firstName} ${formData.lastName}`,
     html: emailHtml,
   });

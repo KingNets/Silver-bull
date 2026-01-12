@@ -218,7 +218,7 @@ export function Contact() {
                       >
                         <SelectValue placeholder="Select title" />
                       </SelectTrigger>
-                      <SelectContent className="bg-gray-700 border-gray-600">
+                      <SelectContent className="bg-gray-700 border-gray-600 text-white">
                         <SelectItem value="mr">Mr.</SelectItem>
                         <SelectItem value="mrs">Mrs.</SelectItem>
                         <SelectItem value="ms">Ms.</SelectItem>
@@ -359,7 +359,7 @@ export function Contact() {
                     >
                       <SelectValue placeholder="Select service type" />
                     </SelectTrigger>
-                    <SelectContent className="bg-gray-700 border-gray-600">
+                    <SelectContent className="bg-gray-700 border-gray-600 text-white">
                       <SelectItem value="general">General Enquiry</SelectItem>
                       <SelectItem value="consultation">Consultation</SelectItem>
                       <SelectItem value="transport">Metal Transport</SelectItem>
@@ -384,12 +384,11 @@ export function Contact() {
                     <SelectTrigger className="bg-gray-700 border-gray-600 text-white">
                       <SelectValue placeholder="Select investment range" />
                     </SelectTrigger>
-                    <SelectContent className="bg-gray-700 border-gray-600">
-                      <SelectItem value="100k-200k">100k-200k</SelectItem>
-                      <SelectItem value="200k-300k">200k-300k</SelectItem>
-                      <SelectItem value="300k-400k">300k-400k</SelectItem>
-                      <SelectItem value="400k-500k">400k-500k</SelectItem>
-                      <SelectItem value="500k+">500k+</SelectItem>
+                    <SelectContent className="bg-gray-700 border-gray-600 text-white">
+                      <SelectItem value="200,000-300,000">200,000-300,000</SelectItem>
+                      <SelectItem value="300,000-400,000">300,000-400,000</SelectItem>
+                      <SelectItem value="400,000-500,000">400,000-500,000</SelectItem>
+                      <SelectItem value="500,000+">500,000+</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -514,7 +513,7 @@ export function Contact() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p className="text-gray-300">
-                  <span className="text-white">General:</span> Kaimo.rim@gmail.com
+                  <span className="text-white">General:</span> kaimo.rim@mail.ee
                 </p>
               </CardContent>
             </Card>
@@ -542,7 +541,7 @@ export function Contact() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p className="text-gray-300">
-                  <span className="text-white">Company Name:</span> Rim Invest
+                  <span className="text-white">Company Name:</span> KR Puitehituse OÜ
                 </p>
                 <p className="text-gray-300">
                   <span className="text-white">Registration Number:</span> 10042991

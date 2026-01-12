@@ -20,10 +20,12 @@ export function Hero() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-white text-black hover:bg-gray-200">
-                Get Quote
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <a href="#contact">
+                <Button size="lg" className="bg-white text-black hover:bg-gray-200">
+                  Get Quote
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
             </div>
 
             <div className="grid grid-cols-3 gap-8 pt-8">
@@ -58,11 +60,6 @@ export function Hero() {
                 alt="Premium silver bullion bars"
                 className="w-full h-full object-cover rounded-lg"
               />
-            </div>
-            <div className="absolute -bottom-4 -right-4 bg-white text-black p-4 rounded-xl shadow-lg">
-              <p className="text-sm">Current Silver Price</p>
-              <p className="text-xl">$24.85/oz</p>
-              <p className="text-xs text-green-600">+2.3% today</p>
             </div>
           </div>
         </div>

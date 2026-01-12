@@ -6,7 +6,7 @@ export function PrivacyPolicy() {
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl">Privacy Policy</h2>
             <p className="text-gray-300 text-lg">
-              Your privacy is important to us. This policy outlines how Rim Invest handles your information.
+              Your privacy is important to us. This policy outlines how SilverStock handles your information.
             </p>
           </div>
 
@@ -49,8 +49,8 @@ export function PrivacyPolicy() {
               <h3 className="text-xl text-white">Contact Us</h3>
               <p className="text-gray-300">
                 If you have any questions about this Privacy Policy, please contact us at{" "}
-                <a href="mailto:privacy@riminvest.com" className="text-white hover:text-gray-300 underline">
-                  privacy@riminvest.com
+                <a href="mailto:kaimo.rim@mail.ee" className="text-white hover:text-gray-300 underline">
+                  kaimo.rim@mail.ee
                 </a>
               </p>
             </div>

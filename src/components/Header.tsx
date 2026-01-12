@@ -11,7 +11,7 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="text-white">
-              <h1 className="text-xl tracking-wider">Rim Invest</h1>
+              <h1 className="text-xl tracking-wider">SilverStock</h1>
               <p className="text-xs text-gray-400">PRECIOUS METALS</p>
             </div>
           </div>
@@ -35,9 +35,11 @@ export function Header() {
           </nav>
 
           <div className="hidden md:block">
-            <Button variant="outline" className="border-gray-600 text-white hover:bg-white hover:text-black">
-              Get Quote
-            </Button>
+            <a href="#contact">
+              <Button variant="outline" className="border-gray-600 text-white hover:bg-white hover:text-black">
+                Get Quote
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -68,9 +70,11 @@ export function Header() {
                 Privacy Policy
               </a>
               <div className="px-3 py-2">
-                <Button variant="outline" className="w-full border-gray-600 text-white hover:bg-white hover:text-black">
-                  Get Quote
-                </Button>
+                <a href="#contact" className="block">
+                  <Button variant="outline" className="w-full border-gray-600 text-white hover:bg-white hover:text-black">
+                    Get Quote
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
