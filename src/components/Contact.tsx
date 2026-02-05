@@ -4,7 +4,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
-import { MapPin, Phone, Mail, Clock, Building, DollarSign, CheckCircle, AlertCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Building, CheckCircle, AlertCircle } from "lucide-react";
 import { useState, FormEvent } from "react";
 import { Alert, AlertDescription } from "./ui/alert";
 

@@ -1,5 +1,4 @@
 import { Button } from "./ui/button";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { ArrowRight, Shield, TrendingUp, Users } from "lucide-react";
 
 export function Hero() {
