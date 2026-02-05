@@ -169,9 +169,6 @@ export function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl mb-4">Get In Touch</h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Ready to start trading? Contact our expert team for personalized quotes.
-          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -548,23 +545,6 @@ export function Contact() {
                 </p>
                 <p className="text-gray-300">
                   <span className="text-white">Country of Registration:</span> Estonia
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gray-800 border-gray-700">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
-                  <DollarSign className="h-5 w-5" />
-                  Investment Minimums
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <p className="text-gray-300">
-                  <span className="text-white">Starting Investment:</span> $100,000+
-                </p>
-                <p className="text-gray-300">
-                  <span className="text-white">Note:</span> Tailored solutions for larger investments
                 </p>
               </CardContent>
             </Card>

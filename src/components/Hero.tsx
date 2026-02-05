@@ -10,7 +10,7 @@ export function Hero() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl leading-tight">
-                Premium Silver Trading for{" "}
+                Premium Silver Bullion for{" "}
                 <span className="text-gray-400">Businesses</span>
               </h1>
               <p className="text-lg text-gray-300 max-w-lg">

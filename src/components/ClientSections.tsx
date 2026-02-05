@@ -16,7 +16,7 @@ export function ClientSections() {
                   <span className="text-sm text-gray-400 tracking-wider">BUSINESS CLIENTS</span>
                 </div>
                 <h2 className="text-3xl md:text-4xl">
-                  Silver Trading Solutions
+                  Silver Bullion for companies
                 </h2>
                 <p className="text-gray-300 text-lg">
                   Tailored precious metals solutions for companies.
@@ -33,7 +33,7 @@ export function ClientSections() {
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-gray-400">
-                      Orders from 1000 oz
+                      Orders from 3000 oz
                     </CardDescription>
                   </CardContent>
                 </Card>

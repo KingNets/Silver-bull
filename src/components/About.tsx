@@ -21,7 +21,7 @@ export function About() {
     {
       icon: Globe,
       title: "Global Reach",
-      description: "Serving clients worldwide with secure shipping and local market expertise."
+      description: "Serving clients worldwide with secure shipping solutions."
     }
   ];
 
