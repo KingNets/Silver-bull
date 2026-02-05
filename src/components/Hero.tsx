@@ -54,7 +54,7 @@ export function Hero() {
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 p-8">
               <img
-                src="/Silver-bull/silver-bars.jpg"
+                src="/silver-bars.jpg"
                 alt="Silver bullion bars on financial charts"
                 className="w-full h-full object-cover rounded-lg"
               />
