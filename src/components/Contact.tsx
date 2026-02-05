@@ -113,13 +113,21 @@ export function Contact() {
 
     try {
       const apiUrl = (import.meta as any).env.VITE_API_URL || "https://silv213-production.up.railway.app";
+      
+      // Add timeout to prevent hanging
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+      
       const response = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
+        signal: controller.signal,
       });
+      
+      clearTimeout(timeoutId);
 
       const data = await response.json();
 
@@ -155,9 +163,12 @@ export function Contact() {
       }
     } catch (error) {
       console.error("Form submission error:", error);
+      const errorMessage = error instanceof Error && error.name === 'AbortError' 
+        ? "Request timed out. Your message was likely received, but email notification may be delayed."
+        : "Failed to submit form. Please check your connection and try again.";
       setSubmitStatus({
         type: "error",
-        message: "Failed to submit form. Please check your connection and try again.",
+        message: errorMessage,
       });
     } finally {
       setIsSubmitting(false);
