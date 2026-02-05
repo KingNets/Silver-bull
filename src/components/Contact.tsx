@@ -116,7 +116,7 @@ export function Contact() {
       
       // Add timeout to prevent hanging
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout for Railway wake-up
+      const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 second timeout for Railway wake-up
       
       const response = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
