@@ -14,7 +14,6 @@ export function Hero() {
                 <span className="text-gray-400">Businesses</span>
               </h1>
               <p className="text-lg text-gray-300 max-w-lg">
-                Secure your financial future with our premium silver bullion. 
                 Professional trading services with competitive pricing and guaranteed authenticity.
               </p>
             </div>
@@ -55,9 +54,9 @@ export function Hero() {
 
           <div className="relative">
             <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 p-8">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1621028025774-104e1816b176?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzaWx2ZXIlMjBidWxsaW9uJTIwYmFyc3xlbnwxfHx8fDE3NTgzOTcyMTl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Premium silver bullion bars"
+              <img
+                src="/Silv213/silver-bars.jpg"
+                alt="Silver bullion bars on financial charts"
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
