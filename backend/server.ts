@@ -84,7 +84,7 @@ async function sendEmailNotification(formData: ContactFormData) {
 
   await transporter.sendMail({
     from: process.env.EMAIL_FROM || 'noreply@silverstock.com',
-    to: process.env.EMAIL_TO || 'kaimo.rim@mail.ee',
+    to: process.env.EMAIL_TO || 'lyy.rim@gmail.com',
     subject: `New Quote Request from ${formData.firstName} ${formData.lastName}`,
     html: emailHtml,
   });

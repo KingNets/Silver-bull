@@ -112,45 +112,63 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Save to localStorage
-      const submission = {
-        ...formData,
-        createdAt: new Date().toISOString(),
-      };
+      const apiUrl = (import.meta as any).env.VITE_API_URL || "https://silv213-production.up.railway.app";
       
-      const existingSubmissions = localStorage.getItem('formSubmissions');
-      const submissions = existingSubmissions ? JSON.parse(existingSubmissions) : [];
-      submissions.push(submission);
-      localStorage.setItem('formSubmissions', JSON.stringify(submissions));
+      // Add timeout to prevent hanging
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+      
+      const response = await fetch(`${apiUrl}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+        signal: controller.signal,
+      });
+      
+      clearTimeout(timeoutId);
 
-      setSubmitStatus({
-        type: "success",
-        message: "Your request has been submitted successfully! We will contact you within 24 hours.",
-      });
-      
-      // Reset form
-      setFormData({
-        title: "",
-        firstName: "",
-        lastName: "",
-        companyName: "",
-        registrationNumber: "",
-        countryOfRegistration: "",
-        email: "",
-        phone: "",
-        serviceType: "",
-        estimatedQuantity: "",
-        hearAbout: "",
-        message: "",
-        newsletter: false,
-        terms: false,
-      });
-      setErrors({});
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitStatus({
+          type: "success",
+          message: data.message || "Your request has been submitted successfully!",
+        });
+        
+        // Reset form
+        setFormData({
+          title: "",
+          firstName: "",
+          lastName: "",
+          companyName: "",
+          registrationNumber: "",
+          countryOfRegistration: "",
+          email: "",
+          phone: "",
+          serviceType: "",
+          estimatedQuantity: "",
+          hearAbout: "",
+          message: "",
+          newsletter: false,
+          terms: false,
+        });
+        setErrors({});
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: data.message || "An error occurred. Please try again.",
+        });
+      }
     } catch (error) {
       console.error("Form submission error:", error);
+      const errorMessage = error instanceof Error && error.name === 'AbortError' 
+        ? "Request timed out. Your message was likely received, but email notification may be delayed."
+        : "Failed to submit form. Please check your connection and try again.";
       setSubmitStatus({
         type: "error",
-        message: "Failed to submit form. Please try again.",
+        message: errorMessage,
       });
     } finally {
       setIsSubmitting(false);
